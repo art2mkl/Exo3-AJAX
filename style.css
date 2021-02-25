@@ -1,0 +1,27 @@
+:root{
+    --main-color : whitesmoke;  
+}
+
+body {   
+    background-color: var(--main-color);
+}
+
+.logo {
+    width:14rem;
+    margin-left:-0.3rem;
+}
+.sous-logo{
+    font-size:0.7rem;
+    margin-top:1rem;
+}
+
+header {
+    background: url("https://cdn.mavoiturecash.fr/images/home-campaign.d61ea367caba3f26581f.png") top/cover;
+}
+
+form {
+    padding:1rem;
+    margin:10rem 0 1rem;
+    background: rgba(0, 0, 0, 0.603);
+    border-radius:0.2rem;
+}
