@@ -13,7 +13,7 @@ $('#numero').on('input', () => {
         .done(function (texte) {
             if ($('#numero').val().length != 0) {
                 $('.label1').text(texte);
-                if (texte == 'Format non valide') {
+                if (texte == 'Format non valide : AB-123-AB') {
                     $('#numero').css('background-color', 'salmon')
                     $('.label1').css('color', 'salmon')
                 } else {
@@ -42,7 +42,7 @@ $('#email').on('input', () => {
         .done(function (texte) {
             if ($('#email').val().length != 0) {
                 $('.label2').text(texte);
-                if (texte == 'Format non valide') {
+                if (texte == 'Format non valide : azerty@qwerty.com') {
                     $('#email').css('background-color', 'salmon')
                     $('.label2').css('color', 'salmon')
                 } else {
