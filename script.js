@@ -1,45 +1,29 @@
-// $('button').on('click', () => {
+$('#email').on('input', () => {
+    $.ajax({
+        url: "answer.php",
+        data: {
+            email: $('#email').val()
+        },
+        type: "POST",
+        dataType: "Text"
+    })
 
-//   // Using the core $.ajax() method
-//   $.ajax({
+        .done(function (texte) {
+            if ($('#email').val().length != 0) {
+                $('.label2').text(texte);
+                if(texte == 'Format non valide') {
+                    $('#email').css('background-color', 'salmon')
+                    $('.label2').css('color', 'salmon')
+                } else {
+                    $('#email').css('background-color', 'aquamarine')
+                    $('.label2').css('color', 'aquamarine')
+                }
+            } else {
+                $('.label2').text('');
+                $('#email').css('background-color', 'white')
+            }
+        })
+})
 
-//     url: "answer.php",
-
-//     // The data to send (will be converted to a query string)
-//     data: {
-//       requete: "exercice2"
-//     },
-
-//     // Whether this is a POST or GET request
-//     type: "POST",
-
-//     // The type of data we expect back
-//     dataType: "json",
-//   })
-
-//     // Code to run if the request succeeds (is done);
-//     // The response is passed to the function
-//     .done(function (json) {
-//       $('h1').text(json.title);
-//       $('.answer').text(json.content);
-//       $('button').css("background-color", "red")
-//       //alert("The request is complete!");
-//     })
-
-//     // Code to run if the request fails; the raw request and
-//     // status codes are passed to the function
-//     .fail(function (xhr, status, errorThrown) {
-//       alert("Sorry, there was a problem!");
-//       console.log("Error: " + errorThrown);
-//       console.log("Status: " + status);
-//       console.dir(xhr);
-//     })
-
-//   // // Code to run regardless of success or failure;
-//   // .always(function (xhr, status) {
-//   //   alert("The request is complete!");
-//   // });
-
-// })
 
 

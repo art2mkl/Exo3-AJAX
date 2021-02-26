@@ -1,6 +1,11 @@
 <?php
 
-// if(isset($_POST['requete']) AND $_POST['requete'] == "exercice2"){
-//     $tab = ["title" => "Ceci est mon nouveau titre après ma requête PHP", "content" => "ceci est mon nouveau contenu"];
-//     echo json_encode($tab);
-// }
+if (isset($_POST['email'])) {
+    $email = htmlspecialchars($_POST["email"]);
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $emailErr = "Format non valide";
+    } else {
+        $emailErr = "Format valide";
+    }
+    echo $emailErr;
+}
